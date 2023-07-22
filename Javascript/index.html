@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <ul id="list">
+        <li>red</li>
+        <li>green</li>
+        <li>blue</li>
+    </ul>
+    <input type="text" id="input">
+    <button id="add" onclick="addToList()"> Click to Add </button>
+
+
+    <script>
+        "use strict";
+        
+        function addToList() {
+            const input = document.getElementById("input");
+            const list = document.getElementById("list");
+
+            // Get the value from the input field
+            const inputValue = input.value;
+
+            // Create a new list item and add the input value as its content
+            const listItem = document.createElement("li");
+            listItem.textContent = inputValue;
+
+            // Append the new list item to the list
+            list.appendChild(listItem);
+        }
+
+
+
+    </script>
+</body>
+</html>
