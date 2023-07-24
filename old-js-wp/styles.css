@@ -1,0 +1,120 @@
+body {
+  font-family: Georgia, serif;
+  align-content: center;
+  background-color: #dfdddd;
+  color: #333333;
+}
+
+#content {
+  margin-top: 20px;
+  width: 100%;
+  color: #005a3c;
+  position: relative;
+
+}
+#addElementBtn {
+  margin: 1.5rem auto;
+  display: block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #4caf50;
+  box-shadow: 7px 10px 5px rgba(0, 0, 0, 0.24);
+  transition: background-color 0.3s, transform 0.2s;
+}
+#addElementBtn:hover {
+  background-color: #47c44d;
+  transform: translateY(-5px);
+  box-shadow: 11px 8px 5px rgba(0, 0, 0, 0.274);
+}
+
+p:hover{
+  box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  padding: .5rem 2.5rem;
+  width: 80%;
+  margin: auto;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+}
+
+img {
+    max-width: 80%; 
+    height: auto; 
+    display: block; 
+    margin: 1.5rem auto;
+    border: 0.5px solid rgba(0, 0, 0, 0.075); 
+    border-radius: 7px;
+    transition: transform 0.2s;
+
+  }
+  
+  img:hover {
+    transform: scale(1.1); 
+    transition: transform 0.5s;
+
+  }
+
+  iframe{
+    width: 70%;
+    height: 20rem;
+    margin: auto;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 1rem auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: -webkit-fill-available;
+    padding: .5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 100px;
+    padding: 1rem 1rem;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px 0px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

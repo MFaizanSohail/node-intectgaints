@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dynamic Element Addition</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="https://kit.fontawesome.com/ab4d7525ad.js" crossorigin="anonymous"></script>
+		</head>
+	<body>
+		
+        <div id="content"></div>
+		
+        <button id="addElementBtn" onclick="showElementOptions() ">
+			Add Element
+		</button>
+        <div id="elementOptions" class="hidden">
+			<div class="icon-div">
+				<i class="fa-regular fa-pen-to-square fa-2xl" onclick="addElement('paragraph')"> </i>
+				<p>Paragraph</p>
+			</div>
+			<div class="icon-div">
+				<i class="fa-regular fa-image fa-2xl" onclick="addElement('image')"></i>
+				<p>Image</p>
+			</div>
+			<div class="icon-div">
+				<i class="fa-regular fa-circle-play fa-2xl" onclick="addElement('video')"></i>
+				<p>Video</p>
+			</div>
+			<div class="icon-div">
+				<i class="fa-regular fa-envelope fa-2xl" onclick="addElement('form')"></i>
+				<p>Contact Form</p>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
