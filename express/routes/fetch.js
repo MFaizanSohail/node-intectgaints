@@ -1,3 +1,4 @@
+
 // const apiUrl = "https://jsonplaceholder.typicode.com/posts";
 
 // // Function to fetch data from the API using promises
@@ -28,17 +29,16 @@
 //     console.error("Error fetching data:", error);
 //   });
 
-
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
 async function fetchData() {
-  try {
-    const response = await fetch('https://api.github.com/users/github');
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error('Error:', error);
-  }
+	try {
+		const response = await fetch("https://api.github.com/users/github");
+		const data = await response.json();
+		console.log(data);
+	} catch (error) {
+		console.error("Error:", error);
+	}
 }
 
 fetchData();

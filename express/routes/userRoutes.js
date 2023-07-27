@@ -1,20 +1,37 @@
 const express = require("express");
-const userRouter = express.Router();
+const router = express.Router();
+var jwt = require("jsonwebtoken");
 
-userRouter.post("/post", function (req, res) {
-	res.send("create new post");
+const registeredUsers = [];
+
+router.post("/signUp", function (req, res) {
+	console.log("============= req.bodyooo ", req.body);
+	registeredUsers.push(req.body);
+	res.send("user received");
 });
 
-userRouter
-	.route("/:id")
-	.get((req, res) => {
-		res.send("send details ${req.params.id}");
-	})
-	.put((req, res) => {
-		res.send("edit user");
-	})
-	.delete((req, res) => {
-		res.send("delete user");
-	});
+router.post("/signIn", function (req, res) {
+	console.log("============= req.body===== ", req.body);
+	const result = registeredUsers.filter(
+		(user) =>
+			user.userName === req.body.userName &&
+			user.password === req.body.password
+	);
+	console.log("--------- matched user ------- ", result);
+	if (result.length) {
+		var token = jwt.sign(result[0], "shhhhh");
+		res.send(token);
+	} else {
+		res.status(401).send("Authentication failed");
+	}
+});
 
-module.exports = userRouter;
+router.get("/getUsers", function (req, res) {
+	console.log("============= req.body===== ", req.headers.authorization);
+	const token = req.headers.authorization;
+	const user = jwt.verify(token, "shhhhh");
+	console.log(" =========== requesting user-------- ", user);
+	res.send("okay");
+});
+
+module.exports = router;
