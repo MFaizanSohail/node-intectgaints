@@ -3,6 +3,8 @@ const app = express();
 const PORT = 3000;
 const routes = require("./routes");
 const mongoose = require("mongoose");
+const cors = require("cors");
+
 
 mongoose.connect('mongodb://127.0.0.1:27017', {
 	useNewUrlParser: true, useUnifiedTopology: true,
@@ -13,7 +15,7 @@ con.on('open', function() {
 	console.log("connected");
 })
 
-
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 app.listen(PORT, function (err) {
