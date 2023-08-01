@@ -1,4 +1,15 @@
-POST http://localhost:3000/user/signUp
+### admin signup link 
+POST http://localhost:3000/admin/signUp
+content-type: application/json
+
+{
+    "userName": "user1",
+    "password": "1234",
+    "userType": "admin"
+}
+
+### admin singin link
+POST http://localhost:3000/admin/signIn
 content-type: application/json
 
 {
@@ -6,8 +17,15 @@ content-type: application/json
     "password": "1234"
 }
 
-###
-POST http://localhost:3000/user/signIn
+### admin get users datad link
+GET  http://localhost:3000/admin/getUsers
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzZXIxIiwicGFzc3dvcmQiOiIxMjM0IiwiaWF0IjoxNjkwNzg1ODE1fQ.I0i26zd78yDLgHH75ttlJMf_JOTvhzihTXbsBncUpV8
+
+
+
+
+### buyer signup link 
+POST http://localhost:3000/buyer/signUp 
 content-type: application/json
 
 {
@@ -15,6 +33,29 @@ content-type: application/json
     "password": "1234"
 }
 
-###
-GET  http://localhost:3000/user/getUsers
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzZXIxIiwicGFzc3dvcmQiOiIxMjM0IiwiaWF0IjoxNjkwMzcyNzc4fQ.3JVzMUBTGTssUkFI0e5I9nkkVjmdpOZ4vf20s2KKyho
+### buyer signin link
+POST http://localhost:3000/buyer/signIn 
+content-type: application/json
+
+{
+    "userName": "user1",
+    "password": "1234"
+}
+
+### seller signup link 
+POST http://localhost:3000/seller/signUp
+content-type: application/json
+
+{
+    "userName": "user5",
+    "password": "1234"
+}
+
+### seller signin link
+POST http://localhost:3000/seller/signIn
+content-type: application/json
+
+{
+    "userName": "user1",
+    "password": "1234"
+}

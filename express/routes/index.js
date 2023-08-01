@@ -1,9 +1,11 @@
-const express = require('express')
-const router = express.Router()
-const userRouter = require("./userRoutes")
-const adminRouter = require("./adminRouter")
+const express = require("express");
+const router = express.Router();
+const adminRoutes = require("./adminRouter");
+const buyerRoutes = require("./buyerRoutes");
+const sellerRoutes = require("./sellerRoutes");
 
-router.use("/user/",userRouter);
-router.use("/admin/", adminRouter);
+router.use("/admin/", adminRoutes);
+router.use("/buyer/", buyerRoutes);
+router.use("/seller/", sellerRoutes);
 
-module.exports = router
+module.exports = router;

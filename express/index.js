@@ -1,13 +1,22 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const PORT = 3000;
-const routes = require("./routes")
-app.use(express.json());
+const routes = require("./routes");
+const mongoose = require("mongoose");
 
- 
-app.use(routes);
-app.listen(PORT, function (err) {
-    if (err) console.log(err);
-    console.log("Server listening on PORT", PORT);
+mongoose.connect('mongodb://127.0.0.1:27017', {
+	useNewUrlParser: true, useUnifiedTopology: true,
 });
 
+const con = mongoose.connection
+con.on('open', function() {
+	console.log("connected");
+})
+
+
+app.use(express.json());
+app.use(routes);
+app.listen(PORT, function (err) {
+	if (err) console.log(err);
+	console.log("Server listening on PORT", PORT);
+});

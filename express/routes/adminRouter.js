@@ -1,25 +1,18 @@
 const express = require("express");
 const adminRouter = express.Router();
+const loginController = require('../controllers/loginController');
+const authMiddleware = require('../middleware/authMiddleware');
+const jwt = require("jsonwebtoken");
 
-const adminMiddelware = (req, res, next) => {
-	console.log("admin");
-	req.next();
-};
+adminRouter.post("/signIn", authMiddleware.isAdmin, loginController.signIn);
 
-adminRouter.get("/posts", adminMiddelware, function (req, res) {
-	res.send("View user posts");
+adminRouter.get("/getUsers", function (req, res) {
+	console.log("============= req.body===== ", req.headers.authorization);
+	const token = req.headers.authorization;
+	const user = jwt.verify(token, "shhhhh");
+	console.log(" =========== requesting user-------- ", user);
+	res.send("okay");
 });
 
-adminRouter.post("/users", function (req, res) {
-	res.send("Create new user");
-});
-
-adminRouter.put("/users/:id", function (req, res) {
-	res.send("Update user");
-});
-
-adminRouter.delete("/users/:id", function (req, res) {
-	res.send("Delete user");
-});
 
 module.exports = adminRouter;
