@@ -1,11 +1,11 @@
 ### admin signup link 
-POST http://localhost:3000/admin/signUp
+POST http://localhost:3000/seller/addProduct
 content-type: application/json
 
 {
-    "userName": "user1",
-    "password": "1234",
-    "userType": "admin"
+     "name": "laptop", 
+      "description": "Dell laptop",
+      "price": "$1200"
 }
 
 ### admin singin link
@@ -17,45 +17,3 @@ content-type: application/json
     "password": "1234"
 }
 
-### admin get users datad link
-GET  http://localhost:3000/admin/getUsers
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzZXIxIiwicGFzc3dvcmQiOiIxMjM0IiwiaWF0IjoxNjkwNzg1ODE1fQ.I0i26zd78yDLgHH75ttlJMf_JOTvhzihTXbsBncUpV8
-
-
-
-
-### buyer signup link 
-POST http://localhost:3000/buyer/signUp 
-content-type: application/json
-
-{
-    "userName": "user1",
-    "password": "1234"
-}
-
-### buyer signin link
-POST http://localhost:3000/buyer/signIn 
-content-type: application/json
-
-{
-    "userName": "user1",
-    "password": "1234"
-}
-
-### seller signup link 
-POST http://localhost:3000/seller/signUp
-content-type: application/json
-
-{
-    "userName": "user5",
-    "password": "1234"
-}
-
-### seller signin link
-POST http://localhost:3000/seller/signIn
-content-type: application/json
-
-{
-    "userName": "user1",
-    "password": "1234"
-}

@@ -10,7 +10,7 @@ sellerRoutes.post("/signIn", authMiddleware.isSeller, loginController.signIn);
 
 sellerRoutes.get("/", productController.getAllProducts);
 
-sellerRoutes.post("/", productController.addProduct);
+sellerRoutes.post("/addProduct", productController.addProduct);
 
 sellerRoutes.delete("/:id", productController.removeProduct);
 
